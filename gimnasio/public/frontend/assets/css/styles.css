@@ -1,0 +1,33 @@
+﻿/* ===== Reset básico ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:#111 url("../img/gimnasio-nocturno-iluminado-con-neon.png") no-repeat center fixed;background-size:cover;color:#f1f1f1;line-height:1.6}
+a{text-decoration:none;color:#7ee0ff}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+/* ===== Layout ===== */
+header{background:rgba(0,0,0,.75);padding:1rem;text-align:center;border-bottom:2px solid #444}
+nav a{margin:0 .75rem;font-weight:600}
+.container{max-width:900px;margin:2rem auto;padding:1.5rem;background:rgba(0,0,0,.65);border-radius:12px}
+
+/* ===== Tarjetas ===== */
+.card{background:#1d1d1d;border-radius:8px;padding:1.25rem;margin-bottom:1.5rem;box-shadow:0 0 10px rgba(0,0,0,.6)}
+.card h2{margin-bottom:.75rem;color:#7ee0ff}
+
+/* ===== Formularios ===== */
+input,button{width:100%;padding:.65rem;margin:.4rem 0;border:none;border-radius:6px;font-size:1rem}
+input{background:#2c2c2c;color:#fff}
+input:focus{outline:2px solid #7ee0ff}
+button{background:#7ee0ff;color:#000;font-weight:700;cursor:pointer;transition:background .2s}
+button:hover{background:#50d1ff}
+
+/* ===== Tablas y listas ===== */
+ul{list-style:none}
+table{width:100%;border-collapse:collapse;margin-top:1rem;background:#1d1d1d}
+th,td{padding:.6rem;border:1px solid #333}
+th{background:#222}
+
+/* ===== Utilidades ===== */
+.text-center{text-align:center}
+.mt{margin-top:1rem}
+.error{color:#ff6b6b;text-align:center;margin-top:.5rem}
