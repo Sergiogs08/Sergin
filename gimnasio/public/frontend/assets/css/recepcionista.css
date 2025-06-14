@@ -1,0 +1,155 @@
+﻿/* Panel Recepcionista */
+:root {
+  --bg-img: url('../img/Gimnasio moderno con equipo completo (1).png');
+  --sidebar-bg: rgba(0,0,0,0.85);
+  --card-bg: rgba(0,0,0,0.75);
+  --primary: #4ddcf2;
+  --text: #e0e0e0;
+  --empty: #555;
+  --radius: 10px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  display:flex;
+  min-height:100vh;
+  font-family:'Roboto',sans-serif;
+  background: var(--bg-img) center/cover no-repeat;
+  color: var(--text);
+}
+.sidebar {
+  width:220px;
+  background:var(--sidebar-bg);
+  display:flex; flex-direction:column; align-items:center;
+}
+.sidebar__logo img {
+  width:140px;
+  margin:1.5rem 0;
+}
+.sidebar__nav a,
+.sidebar__nav .logout-link {
+  display:block;
+  width:100%;
+  padding:.75rem 1rem;
+  color:var(--text);
+  text-decoration:none;
+  background:none;
+  border:none;
+  text-align:left;
+  cursor:pointer;
+  transition:background .2s;
+}
+.sidebar__nav a.active,
+.sidebar__nav a:hover,
+.sidebar__nav .logout-link:hover {
+  background:var(--primary);
+  color:#000;
+}
+.main {
+  flex:1;
+  overflow:auto;
+  padding:1rem 2rem;
+}
+.header h1 {
+  font-size:2rem;
+  margin-bottom:1rem;
+}
+.stats {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:1rem;
+  margin-bottom:2rem;
+}
+.stat-card {
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  padding:1rem;
+  text-align:center;
+  transition:transform .2s;
+}
+.stat-card:hover { transform:translateY(-4px); }
+.stat-card h2 { color:var(--primary); margin-bottom:.5rem; }
+.stat-card p { font-size:1.6rem; font-weight:500; }
+
+.tables {
+  display:flex;
+  gap:2rem;
+  flex-wrap:wrap;
+}
+.table-container {
+  flex:1;
+}
+.table-container h3 {
+  color:var(--primary);
+  margin-bottom:.5rem;
+}
+.table-container table {
+  width:100%;
+  border-collapse:collapse;
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.table-container th,
+.table-container td {
+  padding:.75rem 1rem;
+  text-align:left;
+}
+.table-container thead {
+  background:rgba(0,0,0,0.9);
+}
+.table-container tr:not(:last-child) td {
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.empty {
+  color:var(--empty);
+  font-style:italic;
+}
+/* === TARIFAS (cards al estilo catálogo) =================== */
+.tarifa-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-top:1rem;
+}
+.tarifa-card{
+  width:220px;
+  background:var(--card);
+  border-radius:1rem;
+  overflow:hidden;
+  backdrop-filter:blur(6px);
+  display:flex;
+  flex-direction:column;
+}
+.tarifa-card img{
+  width:100%;
+  height:130px;
+  object-fit:cover;
+}
+.tarifa-info{
+  padding:1rem;
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  gap:.3rem;
+}
+.tarifa-info h3{
+  font-size:1rem;
+  color:var(--accent);
+  text-align:center;
+}
+.tarifa-info .precio{
+  font-weight:600;
+  text-align:center;
+}
+.tarifa-info .duracion{
+  font-size:.9rem;
+  text-align:center;
+  color:var(--accent2);
+}
+.tarifa-info .desc{
+  font-size:.75rem;
+  line-height:1.25;
+  text-align:justify;
+  color:#ccc;
+}
+

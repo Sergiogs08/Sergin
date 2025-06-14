@@ -1,0 +1,132 @@
+﻿:root {
+  --bg: #0a0c18;
+  --panel-bg: rgba(20,23,35,0.85);
+  --accent: #55d7ff;
+  --text: #eef2f7;
+  --empty: #7a7f8f;
+  --radius: 0.75rem;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+
+body.admin-page {
+  display: flex;
+  min-height: 100vh;
+  /* Fondo con imagen de gimnasio oscuro */
+  background: url("../img/Gimnasio oscuro con equipo de fuerza.png") center/cover fixed;
+  color: var(--text);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(8px);
+  padding: 2rem 1rem;
+  display: flex; flex-direction: column; align-items: start;
+}
+.sidebar .logo {
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.logo-img {
+  max-width: 140px;
+  display: block;
+  margin: 0 auto;
+}
+.sidebar nav a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: rgba(85,215,255,0.1);
+  color: var(--accent);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex:1;
+  padding: 2rem;
+  overflow-y: auto;
+  backdrop-filter: blur(4px);
+}
+.main-header h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+/* TARJETAS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.card {
+  background: var(--panel-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  text-align: center;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-5px); }
+.card h2 { font-size:1rem; margin-bottom:0.5rem; }
+.card p  { font-size:1.5rem; font-weight:600; color: var(--accent); }
+
+/* WIDGETS */
+.widgets {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+.widget {
+  background: var(--panel-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+.widget h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+/* GRÁFICO */
+.graph canvas {
+  max-height: 240px;
+}
+
+/* LISTAS */
+.lists {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.lists ul {
+  list-style: none;
+}
+.lists li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.lists .name { font-weight:500; }
+.lists .date { color: var(--empty); font-size:0.9rem; }
+.empty { color: var(--empty); font-style:italic; }
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .widgets { grid-template-columns:1fr; }
+}
+

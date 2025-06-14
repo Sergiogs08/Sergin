@@ -1,0 +1,194 @@
+﻿:root {
+  --bg: #0e0e12;
+  --card: rgba(0, 0, 0, 0.6);
+  --text: #fafafa;
+  --accent: #55d7ff;
+  --accent2: #3ddc97;
+}
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: url("../img/Gimnasio de CrossFit iluminado en azul.png") center/cover fixed;
+  backdrop-filter: blur(5px);
+}
+
+.sidebar {
+  width: 240px;
+  background: #111;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .logo img {
+  width: 120px;
+  margin-bottom: 2rem;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  padding: .75rem 1rem;
+  margin-bottom: .5rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  transition: background .2s;
+}
+.nav-link span {
+  margin-right: .5rem;
+}
+.nav-link:hover,
+.nav-link.active {
+  background: var(--card);
+  color: var(--accent);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  color: var(--text);
+  overflow-y: auto;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: .2rem;
+}
+.header .subtitle {
+  color: var(--accent2);
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.empty {
+  background: #222;
+  padding: .75rem;
+  border-radius: .5rem;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  padding: .75rem 1.5rem;
+  border: none;
+  border-radius: .75rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: filter .2s;
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+/* Progress circle */
+.progress-card {
+  text-align: center;
+}
+.progress-circle {
+  position: relative;
+  width: 120px; height: 120px;
+  margin: 1rem auto 0;
+  background: conic-gradient(var(--accent2) 0% 0%, #333 0% 100%);
+  border-radius: 50%;
+}
+.progress-circle[data-percent] {
+  --p: attr(data-percent number);
+  background: conic-gradient(var(--accent2) 0% calc(var(--p) * 1%), #333 calc(var(--p) * 1%) 100%);
+}
+.percent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Calendario placeholder */
+.calendar-card #calendar {
+  height: 200px;
+  background: #222;
+  border-radius: .75rem;
+}
+/* === Rutinas (grid por día) ================================ */
+.rutina-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+  margin-top:1rem;
+}
+
+.rutina-dia{
+  background: var(--card);
+  backdrop-filter: blur(6px);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.dia-heading{
+  font-size:1.3rem;
+  font-weight:600;
+  text-align:center;
+  color:var(--accent);
+  margin-bottom:.75rem;
+}
+
+table.mini{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.9rem;
+}
+
+table.mini th{
+  color:var(--accent);
+  font-weight:600;
+  padding:.35rem .4rem;
+}
+
+table.mini td{
+  padding:.35rem .4rem;
+  text-align:center;
+}
+
+table.mini tr:nth-child(even){
+  background:#1a1a1a;
+}
+
