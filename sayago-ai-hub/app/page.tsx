@@ -188,6 +188,7 @@ export default function Home() {
 
       <footer>
         Las claves se guardan en Vercel. El token privado se guarda solo en tu navegador.
+        No envíes datos identificables de clientes a proveedores gratuitos; anonimizalos primero.
       </footer>
     </main>
   );
