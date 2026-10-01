@@ -1,0 +1,27 @@
+name: Sayago AI Hub Build
+
+on:
+  push:
+    paths:
+      - "sayago-ai-hub/**"
+      - ".github/workflows/sayago-ai-hub-build.yml"
+  pull_request:
+    paths:
+      - "sayago-ai-hub/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sayago-ai-hub
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sayago-ai-hub/package-lock.json
+      - run: npm install --package-lock-only
+      - run: npm ci
+      - run: npm run build
